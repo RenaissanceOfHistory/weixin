@@ -1,0 +1,17 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <image src="{{avartar}}" bindtap="changeAvatar" mode=""/>
+    <view class="nickname" bindtap="login">{{nickname}}</view>
+  </view>
+
+  <!-- 主体 -->
+  <view class="section">
+    <!-- 个人资料 -->
+    <view class="record" bindtap="toProfile" hover-class="record-hover">
+      <text>个人资料</text>
+      <image src="../../resources/image/向右箭头.png" mode=""/>
+    </view>
+  </view>
+</view>

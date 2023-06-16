@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/type/type",
+    "pages/community/community",
+    "pages/mine/mine",
+    "pages/login_register/login_register",
+    "pages/music_detail/music_detail",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "音乐播放器",
+    "navigationBarTextStyle": "white"
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "./resources/image/首页.png",
+      "selectedIconPath": "./resources/image/首页 (1).png"
+    }, {
+      "pagePath": "pages/type/type",
+      "text": "分类",
+      "iconPath": "./resources/image/分类.png",
+      "selectedIconPath": "./resources/image/分类 (1).png"
+    }, {
+      "pagePath": "pages/community/community",
+      "text": "社区",
+      "iconPath": "./resources/image/社区.png",
+      "selectedIconPath": "./resources/image/社区 (1).png"
+    }, {
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "./resources/image/我.png",
+      "selectedIconPath": "./resources/image/我 (1).png"
+    }]
+  }
+}

@@ -1,0 +1,78 @@
+<!--pages/type/type.wxml-->
+<!-- 导入页面脚本 -->
+<wxs src="../../utils/common.wxs" module="common" />
+
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <!-- 搜索框 -->
+    <image src="../../resources/image/搜索.png" mode=""/>
+    <input type="text" value="{{search}}" bindfocus="showTip" bindblur="hideTip" placeholder="{{historyInput}}" />
+    <!-- 点击搜索框时显示菜单 -->
+    <view class="tip-container {{showTip ? 'tip-container-active' : ''}}">
+      <view class="tip">
+        <view class="tip-title">热门搜索</view>
+        <view class="tip-list clearfix">
+          <view class="tip-item" wx:for="{{9}}" wx:key="index">
+            item {{index + 1}}
+          </view>
+        </view>
+      </view>
+      <view class="tip">
+        <view class="tip-title">搜索历史</view>
+        <view class="tip-list clearfix">
+          <view class="tip-item" wx:for="{{historyList}}" wx:key="index" catchtap="hisSearch" data-index="{{index}}" wx:if="{{item.length > 0}}">
+            {{item}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 主体 -->
+  <view class="section">
+    <!-- 分类列表 -->
+    <view class="left">
+      <scroll-view scroll-y>
+        <block wx:for="{{typeList}}" wx:key="index">
+          <view class="type-item" hover-class="type-item-hover" 
+            bindtap="changePage" data-current-index="{{index}}">
+            {{item}}
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+
+    <!-- 列表内容 -->
+    <view class="right">
+      <swiper current="{{currentIndex}}">
+        <!-- 推荐 -->
+        <swiper-item class="page-item">
+          <scroll-view scroll-y>
+            <view wx:for="{{musicList}}" hover-class="type-item-hover" data-index="{{index}}" bindtap="toDetail" class="music-item" wx:key="index">
+              <image src="{{item.pic}}" mode="" />
+              <view class="music-info">
+                <view>{{item.sname.length > 12 ? common.substr(item.sname, 0, 12) + "..." : item.sname}}</view>
+                <view>{{item.artist.length > 10 ? common.substr(item.artist, 0, 10) + "..." : item.artist}}</view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+
+        <!-- 排行榜 -->
+        <swiper-item class="page-item">
+          <view wx:for="{{musicList}}" wx:key="index">
+            
+          </view>
+        </swiper-item>
+
+        <!-- 歌手 -->
+        <swiper-item class="page-item">
+          <view wx:for="{{musicList}}" wx:key="index">
+            
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+<!--pages/community/community.wxml-->
+<view class="container">
+  <!-- 评论 -->
+  <view class="section">
+    <!-- 有评论时显示 -->
+    <block wx:if="{{commentList.length > 0}}">
+      <view class="comment-list" wx:for="{{commentList}}" wx:key="index">
+        {{item}}
+      </view>
+    </block>
+    <!-- 否则，提示暂无评论信息 -->
+    <block wx:else>
+      <view class="no-comment">
+        <image src="../../resources/image/评论.png" mode="" />
+        <view class="comment">暂无评论</view>
+      </view>
+    </block>
+  </view>
+</view>

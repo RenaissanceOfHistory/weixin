@@ -1,0 +1,10 @@
+/**
+ * 在wxml页面获取字符串字串
+*/
+var substr = function(value = "", start = 0, end = 0) {
+  return value.substring(start, end);
+}
+
+module.exports = {
+  substr: substr
+}

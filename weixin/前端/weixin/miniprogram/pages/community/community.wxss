@@ -1,0 +1,21 @@
+/* pages/community/community.wxss */
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #eee;
+}
+
+.no-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200rpx;
+  color: #999;
+}
+
+.no-comment image {
+  width: 200rpx;
+  height: 200rpx;
+  opacity: 0.2;
+}

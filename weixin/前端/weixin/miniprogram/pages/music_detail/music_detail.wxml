@@ -1,0 +1,65 @@
+<!--pages/music_detail/music_detail.wxml-->
+<!-- 导入页面脚本 -->
+<wxs src="../../utils/common.wxs" module="common" />
+
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <!-- 音乐图片 -->
+    <image class="music-img {{isPlaying ? 'music-play' : 'music-pause'}}" src="{{musicList[index].pic}}" mode=""/>
+  </view>
+
+  <!-- 导航按钮 -->
+  <view class="nav">
+    <!-- 音乐进度滑动条 -->
+    <view class="slider-container">
+      <slider class="slider" bindchange="sliderChange" bindchanging="sliderChange" value="{{currentTime}}" min="0" max="{{musicList[index].duration}}" block-size="12" activeColor="#3f90b1f6" />
+      <view class="song-time">{{songTimeMinutes}}/{{musicList[index].song_time_minutes}}</view>
+    </view>
+    <!-- 音乐控制按钮 -->
+    <view class="btn-group">
+      <image src="{{iconLoopList[iconLoopIndex]}}" capture-catch:longpress="showIconInfo" data-index="0" bindtap="changeLoop" mode=""/>
+      <image src="{{preList[preIndex]}}" bindtap="toPre" capture-catch:longpress="showIconInfo" data-index="1" mode=""/>
+      <image src="{{playPauseList[playIndex]}}" capture-catch:longpress="showIconInfo" data-index="2" bindtap="changeState" style="width: 70rpx; height: 70rpx;" mode=""/>
+      <image src="{{nextList[nextIndex]}}" bindtap="toNext" capture-catch:longpress="showIconInfo" data-index="3" mode=""/>
+      <image src="../../resources/image/24gf-playlistMusic2.png" bindtap="openMusicList" capture-catch:longpress="showIconInfo" data-index="4" mode=""/>
+    </view>
+  </view>
+
+  <!-- 主体 -->
+  <view class="section">
+    <!-- 音乐简介 -->
+    <view class="profile">
+      <view class="sname">{{musicList[index].sname}}</view>
+      <view class="artist">{{musicList[index].artist}}</view>
+      <view class="album">专辑：<text>{{musicList[index].album == "" ? '未知' : musicList[index].album}}</text></view>
+      <view class="album">发行时间：<text>{{musicList[index].release_date == "" ? '未知' : musicList[index].release_date}}</text></view>
+    </view>
+    <!-- 功能按钮 -->
+    <view class="btn-container">
+      <view class="music-btn" bindtap="downloadMusic" hover-class="music-btn-hover">
+        <image src="../../resources/image/download.png" mode=""/>
+        下载
+      </view>
+      <view class="music-btn" bindtap="toMV" hover-class="music-btn-hover">
+        <image src="../../resources/image/播放MV.png" mode=""/>
+        MV
+      </view>
+    </view>
+  </view>
+
+  <!-- 尾部 -->
+  <view class="footer">
+    <!-- 点击音乐列表按钮时显示的音乐数据 -->
+    <view class="music-list {{showMusicList ? 'music-list-show' : 'music-list-hide'}}">
+      <scroll-view scroll-y>
+        <block wx:for="{{musicList}}" wx:for-index="i" wx:key="i">
+          <view class="music-item {{i == index ? 'music-item-hover' : ''}}" hover-class="music-item-hover" data-index="{{i}}" bindtap="chooseMusic">
+            <view>{{item.sname.length > 15 ? common.substr(item.sname, 0, 15) + "..." : item.sname}}</view>
+            <view>{{item.artist.length > 4 ? common.substr(item.artist, 0, 4) + "..." : item.artist}}</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>

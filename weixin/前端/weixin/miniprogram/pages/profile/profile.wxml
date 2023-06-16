@@ -1,0 +1,49 @@
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <!-- 主体 -->
+  <view class="section">
+    <!-- 个人资料 -->
+    <view class="title">个人资料</view>
+    <form bindsubmit="submitProfile" class="profile-form">
+      <view class="input-group">
+        <label for="">用户名</label>
+        <input type="text" name="nickname" maxlength="50" placeholder-class="input-placeholder" value="{{nickname}}" />
+      </view>
+
+      <view class="input-group">
+        <label for=""><text space="emsp">密 码</text></label>
+        <input type="text" name="passwd" maxlength="50" placeholder-class="input-placeholder" value="{{passwd}}" />
+      </view>
+
+      <view class="input-group">
+        <label for=""><text space="emsp">地 区</text></label>
+        <picker mode="region" name="region" bindchange="changeRegion">
+          <text>{{"/" == region ? "未知" : region}}</text>
+        </picker>
+      </view>
+
+      <view class="input-group">
+        <label for=""><text space="emsp">邮 箱</text></label>
+        <input type="text" name="email" maxlength="50" input-placeholder value="{{profile.email}}" />
+      </view>
+
+      <view class="input-group">
+        <label for=""><text space="emsp">性 别</text></label>
+        <radio-group name="gender">
+          <radio value="0" checked="{{0 == profile.gender}}" />男
+          <radio value="1" checked="{{1 == profile.gender}}" />女
+        </radio-group>
+      </view>
+      
+      <view class="input-group">
+        <label for="">个人简介</label>
+        <textarea value="{{profile.commentary}}" name="commentary" maxlength="200" placeholder="介绍一下你自己..." />
+      </view>
+
+      <view class="btn-group">
+        <button type="primary" form-type="submit" size="mini">保存</button>
+        <button type="default" size="mini" bindtap="goBack">返回</button>
+      </view>
+    </form>
+  </view>
+</view>

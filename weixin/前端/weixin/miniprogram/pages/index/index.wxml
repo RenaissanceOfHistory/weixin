@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<!-- 导入页面脚本 -->
+<wxs src="../../utils/common.wxs" module="common" />
+
+<!-- 容器 -->
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <!-- 轮播图 -->
+    <swiper indicator-dots circular interval="3000" autoplay>
+      <block wx:for="{{swiperList}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.src}}" bindtap="toTarget" data-desc="{{item.desc}}" mode=""/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 导航条 -->
+  <view class="nav">
+    <view class="recommand">推荐歌单</view>
+    <!-- 推荐歌单 -->
+    <scroll-view scroll-x>
+      <block wx:for="{{recommandList}}" wx:key="index">
+        <view class="recommand-item {{recomandActiveIndex == index ? 'recommand-active': ''}}" 
+          hover-class="recommand-hover" bindtap="recommandTap" data-index="{{index}}">{{item}}</view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <!-- 主体 -->
+  <view class="section">
+    <!-- 音乐显示 -->
+    <view class="music-list clearfix">
+      <view class="music-item" wx:for="{{musicList}}" wx:key="index" hover-class="music-hover">
+        <image class="music-img" src="{{item.pic}}" data-index="{{index}}" bindtap="toMusicDetail" mode=""/>
+        <view class="artist">{{item.sname.length > 5 ? common.substr(item.sname, 0, 5) + "..." : item.sname}}</view>
+      </view>
+    </view>
+  </view>
+</view>

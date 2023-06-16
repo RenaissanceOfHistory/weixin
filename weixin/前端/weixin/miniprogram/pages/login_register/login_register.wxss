@@ -1,0 +1,107 @@
+/* pages/login_register/login_register.wxss */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  background-color: #f1f1f1;
+  width: 80%;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+label text {
+  color: rgba(255, 0, 0, 0.788);
+  display: inline-block;
+  margin-left: 5rpx;
+}
+
+input {
+  font-size: 0.9rem;
+  border-radius: 10rpx;
+  background-color: #fff;
+  padding: 10rpx;
+  margin-bottom: 20rpx;
+  color: #333;
+}
+
+.code {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.code input {
+  margin: 0;
+  width: 50%;
+  border-radius: 0;
+}
+
+.code button {
+  background-color: #fff;
+  padding: 10rpx;
+  width: 50%;
+  text-align: center;
+  font-size: 0.89rem;
+  border-radius: 0;
+}
+
+.btn-group {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.btn-reset {
+  background-color: #d81f06be !important;
+  color: #fff !important;
+  margin-left: 20rpx;
+}
+
+.btn-reset:active {
+  background-color: #d81f068a !important;
+}
+
+.tip {
+  margin-top: 30rpx;
+}
+
+.register-text {
+  color: cornflowerblue;
+  text-decoration: underline;
+}
+
+.wechat-img {
+  width: 80rpx;
+  height: 80rpx;
+  border: 1rpx solid rgb(36, 200, 145);
+  border-radius: 50%;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wechat-img:active {
+  background-color: rgba(36, 200, 145, 0.527);
+}
+
+.wechat-img image {
+  width: 70rpx;
+  height: 70rpx;
+}
+

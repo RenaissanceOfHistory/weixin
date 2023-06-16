@@ -1,0 +1,59 @@
+<!--pages/login_register/login_register.wxml-->
+<!-- 容器 -->
+<view class="container">
+  <!-- 使用模板进行登录和注册页的切换 -->
+  <template is="login" data="{{codeText, isCodeActive}}" wx:if="{{isLogin}}" />
+  <template is="register" data="{{codeText, isCodeActive}}" wx:else />
+</view>
+
+<!-- 登录模板 -->
+<template name="login">
+  <form bindsubmit="submitLogin" class="form">
+    <label for="">账号<text>*</text></label>
+    <input type="text" name="nickname" maxlength="15" focus placeholder="输入用户名/电话号码" />
+
+    <label for="">密码<text>*</text></label>
+    <input type="password" name="passwd" maxlength="50" placeholder="输入密码" />
+
+    <label for="">验证码<text>*</text></label>
+    <view class="code">
+      <input type="text" name="code" maxlength="10" placeholder="输入验证码" />
+      <button disabled="{{isCodeActive}}" catchtap="getCode">{{codeText}}</button>
+    </view>
+    
+    <view class="btn-group">
+      <button size="mini" form-type="submit" type="primary">登录</button>
+      <button size="mini" form-type="reset" type="warn" class="btn-reset">重置</button>
+    </view>
+  </form>
+  
+  <view class="tip">没有账号？<text class="register-text" bindtap="toRegister">注册</text></view>
+  <view class="wechat-img" bindtap="getUserProfile">
+    <image src="../../resources/image/wechat.png" mode=""/>
+  </view>
+</template>
+
+<!-- 注册模板 -->
+<template name="register">
+  <form bindsubmit="submitRegister" class="form">
+    <label for="">用户名<text>*</text></label>
+    <input type="text" name="nickname" maxlength="15" placeholder="输入用户名" />
+
+    <label for="">电话号码<text>*</text></label>
+    <input type="number" name="phone" maxlength="15" placeholder="输入电话号码" />
+
+    <label for="">密码<text>*</text></label>
+    <input type="password" name="passwd" maxlength="50" placeholder="输入密码" />
+
+    <label for="">验证码<text>*</text></label>
+    <view class="code">
+      <input type="text" name="code" maxlength="10" placeholder="输入验证码" />
+      <button disabled="{{isCodeActive}}" catchtap="getCode">{{codeText}}</button>
+    </view>
+
+    <view class="btn-group">
+      <button size="mini" form-type="submit" type="primary">注册</button>
+      <button size="mini" form-type="reset" type="warn" class="btn-reset">重置</button>
+    </view>
+  </form>
+</template>

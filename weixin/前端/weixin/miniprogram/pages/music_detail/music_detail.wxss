@@ -1,0 +1,181 @@
+/* pages/music_detail/music_detail.wxss */
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+
+.header {
+  height: 500rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  background-color: #3f90b1f6;
+}
+
+.music-img {
+  width: 450rpx;
+  height: 450rpx;
+  border-radius: 50%;
+  animation: turn-around 20s linear infinite;
+}
+
+.music-play {
+  animation-play-state: running;
+}
+
+.music-pause {
+  animation-play-state: paused;
+}
+
+@keyframes turn-around {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+.nav {
+  background-color: snow;
+}
+
+wx-slider .wx-slider-handle-wrapper{
+  height: 12rpx;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 2rpx solid #999;
+}
+
+.slider {
+  width: 70%;
+}
+
+.song-time {
+  width: 30%;
+  color: #999;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 15rpx 10rpx;
+}
+
+.btn-group image {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  padding: 10rpx;
+}
+
+.btn-group image:hover {
+  box-shadow: 0 0 5rpx 5rpx #ddd;
+}
+
+.profile {
+  padding: 20rpx 10rpx;
+  color: #333;
+  border-bottom: 6rpx solid #ccc;
+}
+
+.sname {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.artist {
+  font-size: 0.9rem;
+}
+
+.album {
+  font-size: 0.88rem;
+  color: #666;
+}
+
+.album text {
+  color: #333;
+}
+
+.profile view {
+  line-height: 60rpx;
+}
+
+.music-list {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  transition: .3s;
+  background-color: #fff;
+  border-radius: 30rpx;
+  box-shadow: 0 -5rpx 5rpx 5rpx #eee;
+}
+
+.music-list scroll-view {
+  height: 100%;
+}
+
+.music-list-show {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  height: 500rpx;
+}
+
+.music-list-hide {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
+
+.music-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  font-size: 0.9rem;
+}
+
+.music-item-hover {
+  background-color: #eee;
+}
+
+.btn-container {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.music-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20rpx;
+  color: #333;
+  padding: 10rpx 15rpx;
+  border-radius: 6rpx;
+  font-size: 0.9rem;
+  background-color: #87cfeb88;
+}
+
+.music-btn image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.music-btn-hover {
+  background-color: skyblue;
+}
+

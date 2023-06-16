@@ -1,0 +1,153 @@
+/* pages/type/type.wxss */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #bfbfbf70;
+  padding: 10rpx;
+  width: 80%;
+  margin: 15rpx auto;
+  border-radius: 10rpx;
+  gap: 10rpx;
+  color: #333;
+  position: relative;
+}
+
+.header image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 10rpx;
+}
+
+.header input {
+  font-size: 0.9rem;
+  width: 16rem;
+}
+
+.tip-container {
+  display: none;
+  height: 0;
+  position: absolute;
+  visibility: hidden;
+  top: 70rpx;
+  background-color: #fff;
+  width: 80vw;
+  z-index: 666;
+  box-shadow: 0 3rpx 5rpx 5rpx #eee;
+  overflow: auto;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+
+.tip-container-active {
+  display: block;
+  animation: show-tip .5s ease-out 0s 1 forwards;
+}
+
+@keyframes show-tip {
+  0% {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    height: 500rpx;
+    visibility: visible;
+  }
+}
+
+.tip {
+  height: 50%;
+}
+
+.tip-title {
+  font-size: 0.85rem;
+  color: #333;
+  padding: 10rpx;
+  border-bottom: 1rpx solid #eee;
+  background-color: #eeeeee85;
+}
+
+.tip-list {
+  padding-top: 10rpx;
+  overflow: auto;
+}
+
+.tip-item {
+  color: #999;
+  float: left;
+  padding: 5rpx 10rpx;
+  border-radius: 7rpx;
+  margin: 7rpx 10rpx;
+  font-size: 0.75rem;
+  background-color: #eee;
+}
+
+.section {
+  border-top: 1rpx solid #999;
+  padding-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+}
+
+.left {
+  width: 22%;
+  height: 100%;
+}
+
+.left scroll-view {
+  height: 80vh;
+}
+
+.type-item {
+  line-height: 2.5rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  background-color: #fefefe;
+  border-bottom: 1rpx solid #ccc;
+  border-right: 1rpx solid #ccc;
+  background-color:aliceblue;
+}
+
+.type-item-hover {
+  background-color: #ddd;
+}
+
+.right {
+  width: 78%;
+  box-sizing: border-box;
+  padding: 10rpx;
+}
+
+.right swiper {
+  height: 100%;
+  overflow: auto;
+}
+
+.music-item {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9rem;
+  color: #333;
+  padding: 10rpx;
+}
+
+.music-item image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+}
+
+.music-info view:last-child {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 20rpx;
+}
+
+.page-item scroll-view {
+  height: 100%;
+}
+
